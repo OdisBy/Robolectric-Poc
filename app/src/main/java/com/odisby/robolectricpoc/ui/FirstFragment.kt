@@ -10,6 +10,7 @@ import androidx.core.view.isVisible
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
+import androidx.navigation.findNavController
 import androidx.transition.Visibility
 import com.odisby.robolectricpoc.R
 import com.odisby.robolectricpoc.databinding.FragmentFirstBinding
@@ -65,6 +66,10 @@ class FirstFragment : Fragment() {
 
             bt3.setOnClickListener {
                 viewModel.logicalOne()
+            }
+
+            btNextScreen.setOnClickListener {
+                view.findNavController().navigate(R.id.action_firstFragment_to_secondFragment)
             }
         }
     }

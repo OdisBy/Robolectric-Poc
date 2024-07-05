@@ -2,18 +2,28 @@ package com.odisby.robolectricpoc.ui
 
 import androidx.fragment.app.testing.launchFragmentInContainer
 import androidx.lifecycle.Lifecycle
+import androidx.navigation.Navigation
+import androidx.navigation.testing.TestNavHostController
+import androidx.test.core.app.ApplicationProvider
 import androidx.test.espresso.Espresso.onView
+import androidx.test.espresso.action.ViewActions
 import androidx.test.espresso.action.ViewActions.click
 import androidx.test.espresso.assertion.ViewAssertions.matches
 import androidx.test.espresso.matcher.ViewMatchers
 import androidx.test.espresso.matcher.ViewMatchers.withEffectiveVisibility
 import androidx.test.espresso.matcher.ViewMatchers.withId
 import androidx.test.espresso.matcher.ViewMatchers.withText
+import com.google.common.truth.Truth.assertThat
 import com.odisby.robolectricpoc.R
 import org.junit.Test
 import org.junit.runner.RunWith
 import org.robolectric.RobolectricTestRunner
 
+/**
+ * Example integrated tests, which will execute on Robolectric JVM
+ *
+ * In this example we don't use Context, but you can get it.
+ */
 @RunWith(RobolectricTestRunner::class)
 class FirstFragmentTest {
     @Test
@@ -93,5 +103,27 @@ class FirstFragmentTest {
 
         // Then
         onView(withId(R.id.tv_popup)).check(matches(withEffectiveVisibility(ViewMatchers.Visibility.VISIBLE)))
+    }
+
+    @Test
+    fun `Testing navigation from FirstFragment to SecondFragment`() {
+        // Given
+        val navController = TestNavHostController(
+            ApplicationProvider.getApplicationContext()
+        )
+        val scenario = launchFragmentInContainer<FirstFragment>()
+        scenario.onFragment { fragment ->
+            navController.setGraph(R.navigation.main_graph)
+
+            Navigation.setViewNavController(fragment.requireView(), navController)
+        }
+
+
+        // When
+        onView(withId(R.id.bt_next_screen)).perform(click())
+
+
+        // Then
+        assertThat(navController.currentDestination?.id).isEqualTo(R.id.secondFragment)
     }
 }

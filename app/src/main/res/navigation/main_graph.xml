@@ -9,6 +9,17 @@
         android:name="com.odisby.robolectricpoc.ui.FirstFragment"
         android:label="First Fragment">
 
+        <action
+            android:id="@+id/action_firstFragment_to_secondFragment"
+            app:destination="@id/secondFragment" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/secondFragment"
+        android:name="com.odisby.robolectricpoc.ui.SecondFragment"
+        android:label="Second Fragment">
+
     </fragment>
 
 </navigation>

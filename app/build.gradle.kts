@@ -60,7 +60,6 @@ dependencies {
 
 
     testImplementation(libs.junit)
-    testImplementation(libs.junit.junit)
     testImplementation(libs.androidx.espresso.core)
 
     testImplementation(libs.robolectric)
@@ -68,5 +67,7 @@ dependencies {
     testImplementation(libs.truth)
 
     debugImplementation(libs.androidx.fragment.testing)
-    debugImplementation(libs.androidx.core.v100)
+    debugImplementation(libs.androidx.core)
+
+    debugImplementation("androidx.navigation:navigation-testing:2.7.7")
 }
