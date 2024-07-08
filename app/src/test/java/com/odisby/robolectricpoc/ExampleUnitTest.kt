@@ -2,9 +2,7 @@ package com.odisby.robolectricpoc
 
 
 import androidx.test.internal.runner.junit4.AndroidJUnit4ClassRunner
-import androidx.test.runner.AndroidJUnit4
 import org.junit.Test
-
 import org.junit.Assert.*
 import org.junit.runner.RunWith
 import org.robolectric.RobolectricTestRunner
@@ -15,7 +13,6 @@ import kotlin.system.measureTimeMillis
  *
  * See [testing documentation](http://d.android.com/tools/testing).
  */
-@RunWith(RobolectricTestRunner::class)
 class ExampleUnitTest {
 
     @Test
@@ -26,7 +23,7 @@ class ExampleUnitTest {
     @Test
     fun testAdditionTime() {
         val time = measureTimeMillis {
-            assertEquals(4, 2 + 2)
+            assertEquals(6, 2 + 4)
         }
         println("Time for addition test: $time ms")
     }

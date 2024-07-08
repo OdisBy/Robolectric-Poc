@@ -1,5 +1,5 @@
 [versions]
-agp = "8.6.0-alpha07"
+agp = "8.6.0-alpha08"
 core = "1.6.1"
 coreVersion = "1.6.1"
 kotlin = "1.9.0"
@@ -25,6 +25,7 @@ junitJunit = "4.13.2"
 androidx-core = { module = "androidx.test:core", version.ref = "core" }
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
 androidx-fragment-testing = { module = "androidx.fragment:fragment-testing", version.ref = "fragmentKtx" }
+androidx-navigation-testing = { module = "androidx.navigation:navigation-testing", version.ref = "navigationFragmentKtx" }
 junit = { group = "junit", name = "junit", version.ref = "junit" }
 androidx-junit = { group = "androidx.test.ext", name = "junit", version.ref = "junitVersion" }
 androidx-espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espressoCore" }
