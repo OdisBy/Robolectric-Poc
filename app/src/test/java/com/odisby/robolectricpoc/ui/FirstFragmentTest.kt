@@ -21,6 +21,7 @@ import com.odisby.robolectricpoc.testutils.RUN_INTEGRATED_TEST
 import com.odisby.robolectricpoc.testutils.RUN_UNIT_TEST
 import com.odisby.robolectricpoc.testutils.THEN
 import com.odisby.robolectricpoc.testutils.WHEN
+import org.junit.After
 import org.junit.Before
 import org.junit.Test
 import org.junit.runner.RunWith
@@ -39,6 +40,11 @@ class FirstFragmentTest {
     @Before
     fun setup() {
         robot.setup()
+    }
+
+    @After
+    fun tearDown() {
+        robot.tearsDown()
     }
 
     @Test
@@ -128,6 +134,10 @@ class FirstFragmentTest {
 
         private var scenario: FragmentScenario<FirstFragment>? = null
         private var navController: TestNavHostController? = null
+
+        override fun tearsDown() {
+            scenario?.close()
+        }
 
         fun createFragment() {
             scenario = launchFragmentInContainer<FirstFragment>()

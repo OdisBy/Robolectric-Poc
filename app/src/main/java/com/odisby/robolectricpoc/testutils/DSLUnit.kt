@@ -2,13 +2,14 @@ package com.odisby.robolectricpoc.testutils
 
 import java.util.concurrent.TimeUnit
 
+
 /**
  * Use the method to run single unit test
  * @param robot - Set your test robot (should extend BaseRobot)
  * @param block - the block of code which needs to be executed in our test. Usually we need to place inside all steps for the test
  * @return - TestRun data class instance, which includes the test name and the robot instance
  */
-fun <T: BaseRobot>RUN_UNIT_TEST(
+inline fun <T: BaseRobot>RUN_UNIT_TEST(
     robot: T,
     block: TestRun<T>.() -> Unit
 ) : TestRun<T> {
@@ -33,7 +34,7 @@ fun <T: BaseRobot>RUN_UNIT_TEST(
  * @param block - the block of code which needs to be executed in our test. Usually we need to place inside all steps for the test
  * @return - TestRun data class instance, which includes the test name and the robot instance
  */
-fun <T: BaseRobot>RUN_INTEGRATED_TEST(
+inline fun <T: BaseRobot>RUN_INTEGRATED_TEST(
     robot: T,
     block: TestRun<T>.() -> Unit
 ) : TestRun<T> {
