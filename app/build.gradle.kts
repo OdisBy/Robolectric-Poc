@@ -43,6 +43,13 @@ android {
     testOptions {
         unitTests {
             isIncludeAndroidResources = true
+            all {
+                it.systemProperty("robolectric.offline", "true")
+                it.systemProperty(
+                    "robolectric.dependency.dir",
+                    "${rootDir}/robolectric-jars/preinstrumented"
+                )
+            }
         }
     }
 }
