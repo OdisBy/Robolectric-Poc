@@ -1,5 +1,6 @@
 package com.odisby.robolectricpoc.ui
 
+import android.os.Build.VERSION_CODES
 import androidx.fragment.app.testing.FragmentScenario
 import androidx.fragment.app.testing.launchFragmentInContainer
 import androidx.lifecycle.Lifecycle
@@ -26,6 +27,7 @@ import org.junit.Before
 import org.junit.Test
 import org.junit.runner.RunWith
 import org.robolectric.RobolectricTestRunner
+import org.robolectric.annotation.Config
 
 /**
  * Example integrated tests, which will execute on Robolectric JVM
@@ -33,6 +35,7 @@ import org.robolectric.RobolectricTestRunner
  * In this example we don't use Context, but you can get it.
  */
 @RunWith(RobolectricTestRunner::class)
+@Config(sdk = [VERSION_CODES.UPSIDE_DOWN_CAKE])
 class FirstFragmentTest {
 
     private val robot = FirstFragmentRobot()
