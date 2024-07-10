@@ -21,4 +21,4 @@ dependencyResolutionManagement {
 
 rootProject.name = "Robolectric Poc"
 include(":app")
- 
+include(":robolectric-jars")
