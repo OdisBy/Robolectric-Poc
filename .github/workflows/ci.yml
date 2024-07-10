@@ -25,17 +25,17 @@ jobs:
       - name: Make gradlew executable
         run: chmod +x ./gradlew
 
-      - name: Update dependencies
-        run: |
-          ./gradlew downloadAllRobolectricJars
+#      - name: Update dependencies
+#        run: |
+#          ./gradlew downloadAllRobolectricJars
 
 #      - name: Check formatting
 #        run: |
 #          ./gradlew spotlessCheck
 
-      - name: Build
-        run: |
-          ./gradlew build
+#      - name: Build
+#        run: |
+#          ./gradlew build
 
       - name: Test
         run: |
