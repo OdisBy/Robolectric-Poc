@@ -1,0 +1,11 @@
+name: Manual Trigger Print
+
+on:
+  workflow_dispatch:
+
+jobs:
+  print-ref-name:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Print github.ref_name
+        run: echo "Branch/Tag name: ${{ github.ref_name }}"
